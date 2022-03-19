@@ -94,6 +94,29 @@ useEffect(() => {
 
 
 //Mint function  -> mints the NFT 
+const mint = async() => { 
+  try {
+    //Need a signer since writing to blockchain
+    const signer = await getProviderOrSigner(true);
+    //new instance of nft contract
+    const nftContract = new Contract(NFT_ADDRESS, abi, signer);
+    //Call the mint function from conctract
+    const tx = await nftContract.mint({
+      //value siginifies the cost of the NFT
+      //parse string to ether using the utilis library
+      value: utils.parseEther("0.01")
+
+    });
+    setLoading(true);
+    await tx.wait();
+    setLoading(false);
+  }catch(err) {
+    console.error(err)
+  }
+
+}
+
+
 
 
   return (
@@ -211,7 +234,9 @@ useEffect(() => {
                 </section>
 
               <Project />
-              <Mint />
+              <Mint
+                mint = {mint}
+              />
               <Contact />
 
 

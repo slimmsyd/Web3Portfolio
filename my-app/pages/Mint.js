@@ -2,12 +2,14 @@ import Image from 'next/image';
 
 
 
-const Mint = () => { 
+const Mint = ({mint}) => { 
 
     return(
         <section className = "mintSection">
             <Image src = "/Group2.png" width={500} height = {500}></Image>
-       <button className = "mint">
+       <button
+        onClick={mint}
+       className = "mint">
 
                MINT!
 
