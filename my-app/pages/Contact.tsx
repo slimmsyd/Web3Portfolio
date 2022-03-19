@@ -91,7 +91,7 @@ export default function Contact() {
                             <label htmlFor='message'>Message</label>
 
                            
-                            <textarea value = {formState.message} onChange={updateFormControl} id = "message" rows="30" cols = "60"></textarea>
+                            <textarea value = {formState.message} onChange={updateFormControl} id = "message" ></textarea>
                             <button disabled = {submitting} className='text' type = "submit" id = "text" > {submitting ? "Submitting" : 'Submit'} </button>
                         </form>
                            
