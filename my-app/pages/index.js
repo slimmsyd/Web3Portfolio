@@ -8,11 +8,11 @@ import Mint from './Mint';
 import Contact from './Contact.tsx';
 //Import Web3 Specific Functions 
 
-import {useEffect, useRef, useState} from 'react';
-import { NFT_ADDRESS,abi } from './constants';
-import Web3 from 'web3'
-import {ethers, Contract, utils, proivders, providers} from 'ethers';
-import Web3Modal from 'web3modal';
+// import {useEffect, useRef, useState} from 'react';
+// import { NFT_ADDRESS,abi } from './constants';
+// import Web3 from 'web3'
+// import {ethers, Contract, utils, proivders, providers} from 'ethers';
+// import Web3Modal from 'web3modal';
 
 
 
@@ -106,9 +106,7 @@ const splitString = (string) => {
 
           <div className = "body_Wrapper">
               <Navbar
-                Connect={Connect}
-                accountAddress = {accountAddress}
-                isConnected = {isConnected}
+           
               />
 
 
