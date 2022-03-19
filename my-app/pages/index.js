@@ -16,6 +16,29 @@ export default function Home() {
           <div>
               <Navbar />
 
+
+              <section className = "home">
+
+              <div className = "home_Header">
+    
+                    <div className = "heading_Contents">
+                      <p>Hi! There !</p>
+                        <span id ="line"></span>
+                      <h1>I'm Sydney Sanders</h1>
+                        <h2> Front-End Developer </h2>
+                        <h3>I Like To Keep Things Very Minimal.</h3>
+                        <button className = "explore">
+                            Explore My Work
+                          </button>
+
+                      </div>
+                    <div className = "imageSphere">
+                        <Image src = "/Group.png" alt = "group" width={900} height = {900}></Image>
+                      </div>
+                    </div>
+
+              </section>
+
           </div>
     </div>
   )
