@@ -3,7 +3,8 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Navbar from '../components/Navbar';
 import Main from '../components/Main';
-
+import Project from '../components/Project';
+import Mint from './Mint';
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -114,6 +115,10 @@ export default function Home() {
               
               </div>
                 </section>
+
+              <Project />
+              <Mint />
+
 
 
 
