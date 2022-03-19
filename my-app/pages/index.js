@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Main from '../components/Main';
 import Project from '../components/Project';
 import Mint from './Mint';
+import Contact from './Contact.tsx';
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -118,7 +119,7 @@ export default function Home() {
 
               <Project />
               <Mint />
-
+              <Contact />
 
 
 
