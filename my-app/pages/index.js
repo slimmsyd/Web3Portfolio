@@ -19,13 +19,13 @@ import Contact from './Contact.tsx';
 export default function Home() {
 //Contract Initiate States
 
-const [tokenIdsMinted, setTokenIdsMinted] = useState(0);
-const [isOwner, setIsOwner] = useState(false);
-const [isConnected, setIsConnected] = useState(false);
-const [accountAddress, setAccountAddress] = useState('');
-const [loading, setLoading] = useState(false);
-//catch provider as a ref
-const web3modal = useRef();
+// const [tokenIdsMinted, setTokenIdsMinted] = useState(0);
+// const [isOwner, setIsOwner] = useState(false);
+// const [isConnected, setIsConnected] = useState(false);
+// const [accountAddress, setAccountAddress] = useState('');
+// const [loading, setLoading] = useState(false);
+// //catch provider as a ref
+// const web3modal = useRef();
 
 //splitAddress Function
 const splitString = (string) => {
