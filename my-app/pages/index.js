@@ -6,7 +6,92 @@ import Main from '../components/Main';
 import Project from '../components/Project';
 import Mint from './Mint';
 import Contact from './Contact.tsx';
+//Import Web3 Specific Functions 
+
+import {useEffect, useRef, useState} from 'react';
+import { NFT_ADDRESS,abi } from './constants';
+import Web3 from 'web3'
+import {ethers, Contract, utils, proivders, providers} from 'ethers';
+import Web3Modal from 'web3modal';
+
+
+
 export default function Home() {
+//Contract Initiate States
+
+const [tokenIdsMinted, setTokenIdsMinted] = useState(0);
+const [isOwner, setIsOwner] = useState(false);
+const [isConnected, setIsConnected] = useState(false);
+const [accountAddress, setAccountAddress] = useState('');
+const [loading, setLoading] = useState(false);
+//catch provider as a ref
+const web3modal = useRef();
+
+//splitAddress Function
+const splitString = (string) => {
+  let result1 = string.substring(0,5);
+  let result2 = string.substring(38,42);
+  let finalResult = result1 + "..." + result2;
+  return finalResult;
+};
+
+
+//getProviderOrSigner -> gets provider or signer from web3
+const getProviderOrSigner = async(needSigner = false) =>  { 
+  //Get access to provider 
+  const provider = await web3modal.current.connect();
+  const web3Provider = new providers.Web3Provider(provider);
+  //Get access to the signer
+  const signer = web3Provider.getSigner();
+  const address = await  signer.getAddress();
+  console.l
+  //Split the address
+  const subStringAddress = splitString(address);
+  setAccountAddress(subStringAddress);
+  console.log(accountAddress);
+
+  //Make sure user is using the Rinkeby TestNet Network 
+
+  const {chainId} = await web3Provider.getNetwork();
+  if(chainId !==4) { 
+    window.alert("Change Network To Rinkeby");
+  }
+  if(needSigner) { 
+    const signer = web3Provider.getSigner();
+    return signer;
+  }
+
+  return web3Provider;
+
+
+};
+
+const Connect = async() =>  {
+  try { 
+    await getProviderOrSigner();
+    setIsConnected(true)
+  }catch(err) { 
+    console.error(err)
+  }
+
+}
+
+
+
+
+
+useEffect(() => { 
+  if(!isConnected) { 
+    web3modal.current = new Web3Modal({
+      network: "rinkeby",
+      providerOptions: {},
+      disableInjectedProvider: false,
+
+    })
+  }
+})
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,7 +101,11 @@ export default function Home() {
       </Head>
 
           <div className = "body_Wrapper">
-              <Navbar />
+              <Navbar
+                Connect={Connect}
+                accountAddress = {accountAddress}
+                isConnected = {isConnected}
+              />
 
 
               <section className = "home">
