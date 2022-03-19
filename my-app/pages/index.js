@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" />
       </Head>
 
-          <div className = "heading_Contents">
+          <div className = "body_Wrapper">
               <Navbar />
 
 
