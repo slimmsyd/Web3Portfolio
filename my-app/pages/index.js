@@ -37,59 +37,63 @@ const splitString = (string) => {
 
 
 //getProviderOrSigner -> gets provider or signer from web3
-const getProviderOrSigner = async(needSigner = false) =>  { 
-  //Get access to provider 
-  const provider = await web3modal.current.connect();
-  const web3Provider = new providers.Web3Provider(provider);
-  //Get access to the signer
-  const signer = web3Provider.getSigner();
-  const address = await  signer.getAddress();
-  console.l
-  //Split the address
-  const subStringAddress = splitString(address);
-  setAccountAddress(subStringAddress);
-  console.log(accountAddress);
+// const getProviderOrSigner = async(needSigner = false) =>  { 
+//   //Get access to provider 
+//   const provider = await web3modal.current.connect();
+//   const web3Provider = new providers.Web3Provider(provider);
+//   //Get access to the signer
+//   const signer = web3Provider.getSigner();
+//   const address = await  signer.getAddress();
+//   console.l
+//   //Split the address
+//   const subStringAddress = splitString(address);
+//   setAccountAddress(subStringAddress);
+//   console.log(accountAddress);
 
-  //Make sure user is using the Rinkeby TestNet Network 
+//   //Make sure user is using the Rinkeby TestNet Network 
 
-  const {chainId} = await web3Provider.getNetwork();
-  if(chainId !==4) { 
-    window.alert("Change Network To Rinkeby");
-  }
-  if(needSigner) { 
-    const signer = web3Provider.getSigner();
-    return signer;
-  }
+//   const {chainId} = await web3Provider.getNetwork();
+//   if(chainId !==4) { 
+//     window.alert("Change Network To Rinkeby");
+//   }
+//   if(needSigner) { 
+//     const signer = web3Provider.getSigner();
+//     return signer;
+//   }
 
-  return web3Provider;
-
-
-};
-
-const Connect = async() =>  {
-  try { 
-    await getProviderOrSigner();
-    setIsConnected(true)
-  }catch(err) { 
-    console.error(err)
-  }
-
-}
+//   return web3Provider;
 
 
+// };
+
+// const Connect = async() =>  {
+//   try { 
+//     await getProviderOrSigner();
+//     setIsConnected(true)
+//   }catch(err) { 
+//     console.error(err)
+//   }
+
+// }
 
 
 
-useEffect(() => { 
-  if(!isConnected) { 
-    web3modal.current = new Web3Modal({
-      network: "rinkeby",
-      providerOptions: {},
-      disableInjectedProvider: false,
 
-    })
-  }
-})
+
+// useEffect(() => { 
+//   if(!isConnected) { 
+//     web3modal.current = new Web3Modal({
+//       network: "rinkeby",
+//       providerOptions: {},
+//       disableInjectedProvider: false,
+
+//     })
+//   }
+// })
+
+
+
+//Mint function  -> mints the NFT 
 
 
   return (
