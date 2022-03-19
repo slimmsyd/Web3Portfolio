@@ -87,7 +87,7 @@ export default function Contact() {
                         <label htmlFor='name'>Name</label>
                             <input value = {formState.name} className='email' type = "string" id = "name"   onChange={updateFormControl} required></input>
                         <label htmlFor='email'>Email</label>
-                            <input value ={formState.email} onChange={updateFormControl} className='email' type = "string" id = "email" size = "60"  required></input>
+                            <input value ={formState.email} onChange={updateFormControl} className='email' type = "string" id = "email"  required></input>
                             <label htmlFor='message'>Message</label>
 
                            
