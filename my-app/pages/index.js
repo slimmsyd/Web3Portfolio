@@ -92,7 +92,8 @@ useEffect(() => {
       providerOptions: {},
       disableInjectedProvider: false,
 
-    })
+    });
+    Connect()
   }
 })
 
@@ -121,26 +122,7 @@ const mint = async() => {
 
 }
 
-const renderSkillsAnimtion = () => { 
-  if(typeof window !== "undefined") { 
-    return ( 
 
-
-    <ScrollContainer>
-    <ScrollPage page = {0}>
-    <Animator animation={Sticky}>
-
-    
-      </Animator>
-      </ScrollPage>
-</ScrollContainer>
-
-)
-
-  }  
-
-
-}
 
 
 
