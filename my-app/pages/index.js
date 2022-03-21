@@ -15,6 +15,11 @@ import {ethers, Contract, utils, proivders, providers} from 'ethers';
 import Web3Modal from 'web3modal';
 
 
+//scroll magic import 
+import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn } from "react-scroll-motion";
+
+
+
 
 export default function Home() {
 //Contract Initiate States
@@ -116,6 +121,27 @@ const mint = async() => {
 
 }
 
+const renderSkillsAnimtion = () => { 
+  if(typeof window !== "undefined") { 
+    return ( 
+
+
+    <ScrollContainer>
+    <ScrollPage page = {0}>
+    <Animator animation={Sticky}>
+
+    
+      </Animator>
+      </ScrollPage>
+</ScrollContainer>
+
+)
+
+  }  
+
+
+}
+
 
 
 
@@ -170,68 +196,67 @@ const mint = async() => {
         <section className = "divide clear">
                 <div className = "divideLine"></div>
               </section>
-
-
+              
               <section className ="skills">
-              <div className = "whatIDo">
-              <h2>Skills </h2>
-            </div>
-              <Image className = "skills_Image" alt ="Skills" src = "/Skills.png" width={290} height ={250} />
-                <div className = "skill_Card">
-                    <div className = "card">
-                      <div className = "card1">
-                        <div className = "subCard">
-                            HTML 
-                          </div>
-                          
-                        <div className = "subCard card_Top">
-                            React 
-                          </div>
-                          
-                        <div className = "subCard card_Top">
-                            Git 
-                          </div>
-                   
-                          
-                            </div>
-                      <div className = "card1">
-                      <div className = "subCard">
-                          
-                          CSS 
-                        
-                        </div>
-                               
-                        <div className = "subCard card_Top">
-                            NextJs 
-                          </div>
-                               
-                       
-                        <div className = "subCard card_Top">
-                            EtherJs 
-                          </div>
-                        <div className = "poly">
-                            <Image  className='polyGon' alt = "polyGon" src = '/PolyGon.png' width={14} height ={14}></Image>
-                          </div>
-                            </div>
-                      <div className = "card1">
-                      <div className = "subCard">
-                          
-                          Javascript 
-                        
-                        </div>
-                        <div className = "subCard card_Top">
-                            Solidity 
-                          </div>
-                        <div  className  = "subCard card_Top">
-                            NodeJs 
-                          </div>
-                               
-                            </div>
-                    
-                          </div>
+    <div className = "whatIDo">
+    <h2>Skills </h2>
+  </div>
+    <Image className = "skills_Image" alt ="Skills" src = "/Skills.png" width={290} height ={250} />
+      <div className = "skill_Card">
+          <div className = "card">
+            <div className = "card1">
+              <div className = "subCard">
+                  HTML 
+                </div>
+                
+              <div className = "subCard card_Top">
+                  React 
+                </div>
+                
+              <div className = "subCard card_Top">
+                  Git 
+                </div>
+        
+                
+                  </div>
+            <div className = "card1">
+            <div className = "subCard">
+                
+                CSS 
               
               </div>
-                </section>
+                    
+              <div className = "subCard card_Top">
+                  NextJs 
+                </div>
+                    
+            
+              <div className = "subCard card_Top">
+                  EtherJs 
+                </div>
+              <div className = "poly">
+                  <Image  className='polyGon' alt = "polyGon" src = '/PolyGon.png' width={14} height ={14}></Image>
+                </div>
+                  </div>
+            <div className = "card1">
+            <div className = "subCard">
+                
+                Javascript 
+              
+              </div>
+              <div className = "subCard card_Top">
+                  Solidity 
+                </div>
+              <div  className  = "subCard card_Top">
+                  NodeJs 
+                </div>
+                    
+                  </div>
+          
+                </div>
+    
+    </div>
+      </section>
 
               <Project />
               <Mint
