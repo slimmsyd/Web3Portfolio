@@ -165,7 +165,6 @@ const mint = async() => {
 
               </section>
 
-          </div>
 
           
         <section className = "divide">
@@ -250,5 +249,7 @@ const mint = async() => {
 
 
     </div>
+    </div>
+
   )
 }

@@ -420,6 +420,25 @@ h4 {
   }
 }
 
+@media screen and (max-height: 902px) { 
+  .projects {
+    height: 125vh !important;
+  }
+  .whatIDo { 
+    padding-bottom: 10rem;
+  }
+  .main_Card { 
+    padding-bottom: 5rem;
+  }
+
+}
+@media screen and (max-height: 667px) { 
+  .projects {
+    height: 125vh !important;
+  }
+
+}
+
 
 
 /* MOBILE RESPONSIVESNESS */
