@@ -375,19 +375,6 @@ export const abi = [
   {
     "inputs": [
       {
-        "internalType": "string",
-        "name": "_baseTokenURI",
-        "type": "string"
-      }
-    ],
-    "name": "setBaseURI",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "bool",
         "name": "val",
         "type": "bool"
@@ -580,4 +567,4 @@ export const abi = [
   }
 ]
 
-export const NFT_ADDRESS = "0x5Fc14E9eE09E635Ccbc1585728e6caE7aaA475f3"
+export const NFT_ADDRESS = "0xC70BCB0519b16C4C5025c7f7a602aeCA730B3C06"
